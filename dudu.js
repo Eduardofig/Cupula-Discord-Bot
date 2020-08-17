@@ -46,6 +46,8 @@ client.on('message',async message =>{
                     })                 
                 } else {
                         message.reply('Entra num canal de voz antes, gay');}
+            }else if(checkCommand(message,"cade lucas") || checkCommand(message,"cade lucas?")){
+                message.channel.send("Lais não deixou");
             }else if(checkCommand(message,"artemio")){
                 random = Math.floor(Math.random() * 8);
                 message.channel.send("Mandando imagem de Artêmio",{files:["./images/artemio/" + random + ".jpeg"]});
