@@ -88,8 +88,8 @@ client.on('message',async message =>{
                     message.channel.send("Digite a mensagem que voce quer spammar")
                     client.on('message',async message =>{
                         if(!message.author.bot){
-                        var spam = message.content
-                        message.channel.send("Digite o numero de vezes que voce quer spammar")
+                            var spam = message.content
+                            message.channel.send("Digite o numero de vezes que voce quer spammar")
                             client.on('message',async message =>{
                                 if(!message.author.bot){
                                 var numero = parseInt(message.content)   
@@ -103,8 +103,8 @@ client.on('message',async message =>{
         }
     }
         }
-    }
-})
+    })
+
 
 client.login(process.env.token);
 /*    if ((message.content == "Pedro") || message.content == "pedro"){
