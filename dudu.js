@@ -84,14 +84,15 @@ client.on('message',async message =>{
                 message.channel.send("A singularidade, o criador do universo, a entidade que, do chaos e da entropia, fez a materia ");
             }else if(checkCommand(message,"pedro")){
                 message.channel.send("ola, Mestre")
-            }else if(checkCommand(message,"spam")){    
+            }else if(checkCommand(message,"spam")){
+                    var auth = message.author    
                     message.channel.send("Digite a mensagem que voce quer spammar")
                     client.on('message',async message =>{
-                        if(!message.author.bot){
+                        if(!message.author.bot && message.author == auth){
                             var spam = message.content
                             message.channel.send("Digite o numero de vezes que voce quer spammar")
                             client.on('message',async message =>{
-                                if(!message.author.bot){
+                                if(!message.author.bot && message.author == auth){
                                 var numero = parseInt(message.content)   
                                 for (i = 0; i < numero; i++)
                                 message.channel.send(spam)
