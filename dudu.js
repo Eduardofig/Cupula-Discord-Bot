@@ -84,7 +84,7 @@ client.on('message',async message =>{
                 message.channel.send("A singularidade, o criador do universo, a entidade que, do chaos e da entropia, fez a materia ");
             }else if(checkCommand(message,"pedro")){
                 message.channel.send("ola, Mestre")
-            }else if(checkCommand(message,"spam")){
+            }/*else if(checkCommand(message,"spam")){
                 if(!message.author.bot){
                     var auth = message.author    
                     message.channel.send("Digite a mensagem que voce quer spammar")
@@ -102,7 +102,7 @@ client.on('message',async message =>{
                             break
                         }
                     })
-                }}else{
+                }}*/else{
                 message.channel.send("comando desconhecido, vadia")
         }
     }
