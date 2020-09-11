@@ -85,12 +85,16 @@ client.on('message',async message =>{
             }else if(checkCommand(message,"pedro")){
                 message.channel.send("ola, Mestre")
             }else if(checkCommand(message,"spam")){    
-                message.channel.send("Digite a mensagem que voce quer spammar")
-                var spam = message.content    
-                message.channel.send("Digite o numero de vezes que voce quer spammar")
-                var numero = parseInt(message.content)   
-                for (i = 0; i < numero; i++)
-                    message.channel.send(spam)
+                client.on('message',async message =>{
+                    message.channel.send("Digite a mensagem que voce quer spammar")
+                    var spam = message.content
+                    client.on('message',async message =>{
+                        message.channel.send("Digite o numero de vezes que voce quer spammar")
+                        var numero = parseInt(message.content)   
+                        for (i = 0; i < numero; i++)
+                        message.channel.send(spam)
+                    })
+                })    
             }else{
                 message.channel.send("comando desconhecido, vadia")
         }
