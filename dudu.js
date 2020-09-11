@@ -85,6 +85,7 @@ client.on('message',async message =>{
             }else if(checkCommand(message,"pedro")){
                 message.channel.send("ola, Mestre")
             }else if(checkCommand(message,"spam")){
+                if(!message.author.bot){
                     var auth = message.author    
                     message.channel.send("Digite a mensagem que voce quer spammar")
                     client.on('message',async message =>{
@@ -99,7 +100,7 @@ client.on('message',async message =>{
                             }})
                         }
                     })
-                }else{
+                }}else{
                 message.channel.send("comando desconhecido, vadia")
         }
     }
