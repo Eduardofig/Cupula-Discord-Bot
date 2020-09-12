@@ -16,7 +16,7 @@ client.on('ready', () => {
 
 })
 
-const spammar = () => {
+function spammar(){
     var auth = message.author    
     message.channel.send("Digite a mensagem que voce quer spammar")
     client.on('message',async message =>{
