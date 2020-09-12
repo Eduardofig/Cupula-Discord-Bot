@@ -105,7 +105,7 @@ client.on('message',async message =>{
                 message.channel.send("ola, Mestre")
             }else if(checkCommand(message,"spam")){
                 var args = message.content.slice(12).trim().split(' ');
-                for (i = 0; i<20 ; i++)
+                for (i = 0; i<100 ; i++)
                     message.channel.send(args)
             }else{
             message.channel.send("comando desconhecido, vadia")
