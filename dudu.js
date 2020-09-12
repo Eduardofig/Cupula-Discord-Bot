@@ -16,6 +16,22 @@ client.on('ready', () => {
 
 })
 
+const spammar = () => {
+    var auth = message.author    
+    message.channel.send("Digite a mensagem que voce quer spammar")
+    client.on('message',async message =>{
+        if(!message.author.bot && message.author == auth){
+            var spam = message.content
+            message.channel.send("Digite o numero de vezes que voce quer spammar")
+            client.on('message',async message =>{
+                if(!message.author.bot && message.author == auth){
+                var numero = parseInt(message.content)   
+                for (i = 0; i < numero; i++)
+                message.channel.send(spam)
+                return
+            }})
+        }})}
+
 
 function checkCommand(message, commandName){
     return message.content.toLowerCase().startsWith(".cupula " + commandName)
@@ -86,21 +102,9 @@ client.on('message',async message =>{
                 message.channel.send("ola, Mestre")
             }else if(checkCommand(message,"spam")){
                 if(!message.author.bot){
-                    var auth = message.author    
-                    message.channel.send("Digite a mensagem que voce quer spammar")
-                    client.on('message',async message =>{
-                        if(!message.author.bot && message.author == auth){
-                            var spam = message.content
-                            message.channel.send("Digite o numero de vezes que voce quer spammar")
-                            client.on('message',async message =>{
-                                if(!message.author.bot && message.author == auth){
-                                var numero = parseInt(message.content)   
-                                for (i = 0; i < numero; i++)
-                                message.channel.send(spam)
-                            }})
-                        }
-                    })
-                }}else{
+                    spammar()
+                    }
+                }else{
                 message.channel.send("comando desconhecido, vadia")
         }
     }
