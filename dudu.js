@@ -99,7 +99,6 @@ client.on('message',async message =>{
                                 message.channel.send(spam)
                                 break
                             }})
-                            break
                         }
                     })
                 }}else{
