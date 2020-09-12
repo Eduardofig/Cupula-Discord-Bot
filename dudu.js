@@ -97,7 +97,6 @@ client.on('message',async message =>{
                                 var numero = parseInt(message.content)   
                                 for (i = 0; i < numero; i++)
                                 message.channel.send(spam)
-                                break
                             }})
                         }
                     })
