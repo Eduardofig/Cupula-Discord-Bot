@@ -16,7 +16,7 @@ client.on('ready', () => {
 
 })
 
-function spammar(){
+/*function spammar(message){
     var auth = message.author    
     message.channel.send("Digite a mensagem que voce quer spammar")
     client.on('message',async message =>{
@@ -30,7 +30,10 @@ function spammar(){
                 message.channel.send(spam)
                 return
             }})
-        }})}
+        }})}*/
+
+
+
 
 
 function checkCommand(message, commandName){
@@ -101,9 +104,11 @@ client.on('message',async message =>{
             }else if(checkCommand(message,"pedro")){
                 message.channel.send("ola, Mestre")
             }else if(checkCommand(message,"spam")){
-                    spammar()
-                }else{
-                message.channel.send("comando desconhecido, vadia")
+                var args = message.content.slice(12).trim().split(' ');
+                for (i = 0; i<20 ; i++)
+                    message.channel.send(args)
+            }else{
+            message.channel.send("comando desconhecido, vadia")
         }
     }
         }
