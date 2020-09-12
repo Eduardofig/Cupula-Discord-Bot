@@ -101,9 +101,7 @@ client.on('message',async message =>{
             }else if(checkCommand(message,"pedro")){
                 message.channel.send("ola, Mestre")
             }else if(checkCommand(message,"spam")){
-                if(!message.author.bot){
                     spammar()
-                    }
                 }else{
                 message.channel.send("comando desconhecido, vadia")
         }
