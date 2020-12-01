@@ -1,3 +1,5 @@
+const busca = require('./artemioSearch');
+
 class Artemio {
     constructor(client, message)
     {
@@ -15,6 +17,7 @@ class Artemio {
                     egirls.forEach(egirl=>{
                         messageArtemio.channel.send(`Artemio esta comendo ${egirl}`);
                         messageArtemio.channel.send(`${egirl} foi devorada!!!`);
+                        busca.artemioSearch(egirl,i).then(url => messageArtemio.channel.send(url));
                         return;
                     })
                 }
