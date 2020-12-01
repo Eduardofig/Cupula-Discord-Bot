@@ -1,3 +1,5 @@
+const artImport = require('./artemio');
+
 const bot = async (client, message, parsedMessage) => {
     switch (parsedMessage[1].toLowerCase()) {
         case 'hee' || 'heee' || 'heeee' || 'heeeee':
@@ -21,16 +23,25 @@ const bot = async (client, message, parsedMessage) => {
             var dispatcher = connection.play("hino.mp3");
             message.channel.send("Tocando agora o nosso hino, a cantiga que ecoa no coração de todos os patriotas!!",{files:["./images/bolsonaro.jpeg"]});
             client.on('message', async messageAux =>{
-                if (messageAux.content.toLowerCase()=== '.cupula pare'){
+                if (!messageAux.author.bot && messageAux.content.toLowerCase() === '.cupula pare'){
                     dispatcher.destroy();
                     message.channel.send("Paramos o hino prematuramente, voce venceu, comunista de merda!");
+                    return;
                 }
             })                 
             break;
         case 'artemio':
             random = Math.floor(Math.random() * 8);
-            message.channel.send("Mandando imagem de Artêmio",{files:["./images/artemio/" + random + ".jpeg"]});
-            message.channel.send("Ola, bebezão")
+            message.channel.send("Artemio esta com fome",{files:["./images/artemio/" + random + ".jpeg"]});
+            message.channel.send("Quantas vezes artemio vai se satisfazer hoje?");
+            client.on('message', messageVezes => {
+                if (!messageVezes.author.bot) {
+                    var vezes = parseInt(messageVezes.content);
+                    var artemio = new artImport.artemio(client, messageVezes);
+                    artemio.comerEgirls(vezes);
+                    return;
+                }
+            })
             break;
         case 'lucas' || 'azulinho':
             random = Math.floor(Math.random() * 10);
