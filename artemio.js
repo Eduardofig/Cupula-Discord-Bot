@@ -9,8 +9,9 @@ class Artemio {
         this.message = message;
     }
 
-    comerEgirls(vezes)
+    comerEgirls(_vezes)
     {
+        vezes = _vezes > 5? 5 : _vezes;
         this.message.channel.send('Informe o nome das vitimas de Artemio separadas por virgula')
             .then(() => {
                 this.message.channel.awaitMessages(filter, {max:1, time:30000, erros: ['time']})
