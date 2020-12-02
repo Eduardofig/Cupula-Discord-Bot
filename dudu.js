@@ -17,5 +17,5 @@ client.on('message',async message =>{
 })
 
 
-client.login(/*process.env.token*/'NzQ0MDY1MDE1NzQwNDk3OTMw.Xzdyiw.cXKe4kql_DgFlcatMeUiz0sp-rU');
+client.login(process.env.token);
 
