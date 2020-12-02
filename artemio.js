@@ -23,12 +23,13 @@ class Artemio {
                             egirls.forEach(egirl=>{
                                 messageArtemio.first().channel.send(`Artemio esta comendo ${egirl}`);
                                 busca.artemioSearch(egirl,i).then(url => messageArtemio.first().channel.send(`${egirl} foi devorada!!!`, {files:[url]}));
-                                return;
                             })
                         }
                         return;
                     })
+                return;
             })
+        return;
     }
 }
 

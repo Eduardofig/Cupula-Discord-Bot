@@ -44,7 +44,9 @@ const bot = async (client, message, parsedMessage) => {
                         .catch(messageVezes => {
                             console.log(messageVezes);
                             message.channel.send("Ninguem respondeu, Artemio nao vai devorar ninguem, milagre!");
+                            return;
                         })
+                    return;
                 })
             break;
         case 'lucas' || 'azulinho':
