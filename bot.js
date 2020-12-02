@@ -32,16 +32,20 @@ const bot = async (client, message, parsedMessage) => {
             break;
         case 'artemio':
             random = Math.floor(Math.random() * 8);
-            message.channel.send("Artemio esta com fome",{files:["./images/artemio/" + random + ".jpeg"]});
-            message.channel.send("Quantas vezes artemio vai se satisfazer hoje?");
-            client.on('message', messageVezes => {
-                if (!messageVezes.author.bot) {
-                    var vezes = parseInt(messageVezes.content);
-                    var artemio = new artImport.artemio(client, messageVezes);
-                    artemio.comerEgirls(vezes);
-                    return;
-                }
-            })
+            message.channel.send("Artemio esta com fome, quantas vezes ele vai se satisfazer hoje?",{files:["./images/artemio/" + random + ".jpeg"]})
+                .then(() => {
+                    message.channel.awaitMessages(artImport.filter, {max:1, time:30000, errors:['time']})
+                        .then(messageVezes =>{
+                            var vezes = parseInt(messageVezes.first().content);
+                            var artemio = new artImport.artemio(client, messageVezes.first());
+                            artemio.comerEgirls(vezes);
+                            return;
+                        })
+                        .catch(messageVezes => {
+                            console.log(messageVezes);
+                            message.channel.send("Ninguem respondeu, Artemio nao vai devorar ninguem, milagre!");
+                        })
+                })
             break;
         case 'lucas' || 'azulinho':
             random = Math.floor(Math.random() * 10);

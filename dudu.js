@@ -17,5 +17,5 @@ client.on('message',async message =>{
 })
 
 
-client.login(/*process.env.token*/'NzQ0MDY1MDE1NzQwNDk3OTMw.Xzdyiw.G_Du8IqLjjCWTmCdS5NWjue49Qw');
+client.login(/*process.env.token*/'NzQ0MDY1MDE1NzQwNDk3OTMw.Xzdyiw.cXKe4kql_DgFlcatMeUiz0sp-rU');
 
