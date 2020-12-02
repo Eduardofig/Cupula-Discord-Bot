@@ -27,6 +27,7 @@ class Artemio {
                         }
                         return;
                     })
+                    .catch(messageArtemio => messageArtemio.first().channel.send('Limite de requisicoes diarias excedido'));
                 return;
             })
         return;
