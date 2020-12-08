@@ -2,7 +2,11 @@ const artImport = require('./artemio');
 
 const bot = async (client, message, parsedMessage) => {
     switch (parsedMessage[1].toLowerCase()) {
-        case 'hee' || 'heee' || 'heeee' || 'heeeee':
+        case 'heee':
+        case 'heeee':
+        case 'heeeee':
+        case 'heeeeee':
+        case 'heeeeeee':
             if (!message.guild  || !message.member.voice.channel){
                 message.channel.send('Entra num canal de voz antes gay');
                 break;
@@ -49,7 +53,8 @@ const bot = async (client, message, parsedMessage) => {
                     return;
                 })
             break;
-        case 'lucas' || 'azulinho':
+        case 'azulinho':
+        case 'lucas':
             random = Math.floor(Math.random() * 10);
             message.channel.send('"Eu comeria Rarys"',{files:["./images/lucas/" + random + ".jpeg"]});
             message.channel.send("Ola, azulinho");
@@ -59,12 +64,14 @@ const bot = async (client, message, parsedMessage) => {
             message.channel.send('"Oi, buceta"',{files:["./images/lara/" + random + ".jpeg"]});
             message.channel.send("O perfurador de oceanos, o descobridor de pré-sal, aquele cujo instrumento dá voltas");
             break;
-        case 'eduardo' || 'dudu':
+        case 'dudu':
+        case 'eduardo':
             random = Math.floor(Math.random() * 2);
             message.channel.send("Mandando imagem de Dudu",{files:["./images/eduardo/" + random + ".jpeg"]});
             message.channel.send("O mais gato da cupula");
             break;
-        case 'gabriel' || 'gabiru':
+        case 'gabiru':
+        case 'gabriel':
             random = Math.floor(Math.random() * 7);
             message.channel.send("uh uh meu nome é Gabriel uh uh gabriel uh uh",{files:["./images/gabriel/" + random + ".jpeg"]});
             message.channel.send("Gabriel cagou fora do vaso");
@@ -82,7 +89,9 @@ const bot = async (client, message, parsedMessage) => {
             random = Math.floor(Math.random() * 2);
             message.channel.send("Mandando imagem de Rafael",{files:["./images/rafael/" + random + ".jpeg"]});        
             break;
-        case 'couts' || 'coutinho' || 'demiurgo':
+        case 'coutinho':
+        case 'demiurgo':
+        case 'couts':
             random = Math.floor(Math.random() * 3);
             message.channel.send("Mandando imagem de Coutinho,o DEMIURGO",{files:["./images/couts/" + random + ".jpeg"]});
             message.channel.send("A singularidade, o criador do universo, a entidade que, do chaos e da entropia, fez a materia ");
